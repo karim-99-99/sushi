@@ -28,3 +28,5 @@ export const useScrollAnimation = (threshold = 0.1) => {
   return [ref, isVisible];
 };
 
+
+

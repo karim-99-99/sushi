@@ -256,7 +256,7 @@ const Home = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <h3 className="text-6xl font-black my-14 text-white transform -rotate-90 origin-center whitespace-nowrap" style={{ letterSpacing: '0.1em' }}>
+                <h3 className="text-3xl md:text-5xl lg:text-6xl font-black my-14 text-white transform -rotate-90 origin-center whitespace-nowrap" style={{ letterSpacing: '0.1em' }}>
                   DRINKS
                 </h3>
               </div>
@@ -277,7 +277,7 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6">
-                  <h3 className="text-5xl font-black text-white" style={{ letterSpacing: '0.1em' }}>SUSHI</h3>
+                  <h3 className="text-2xl md:text-4xl lg:text-5xl font-black text-white" style={{ letterSpacing: '0.1em' }}>SUSHI</h3>
                 </div>
               </div>
 
@@ -286,7 +286,7 @@ const Home = () => {
                 minHeight: '300px',
                 borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
               }}>
-                <h2 className="text-7xl md:text-8xl font-black text-white" style={{ letterSpacing: '0.05em' }}>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white" style={{ letterSpacing: '0.05em' }}>
                   Menu
                 </h2>
               </div>
@@ -303,7 +303,7 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6">
-                  <h3 className="text-5xl font-black text-white" style={{ letterSpacing: '0.1em' }}>WOK</h3>
+                  <h3 className="text-2xl md:text-4xl lg:text-5xl font-black text-white" style={{ letterSpacing: '0.1em' }}>WOK</h3>
                 </div>
               </div>
 
@@ -317,7 +317,7 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6">
-                  <h3 className="text-5xl font-black text-white" style={{ letterSpacing: '0.1em' }}>ROLLS</h3>
+                  <h3 className="text-2xl md:text-4xl lg:text-5xl font-black text-white" style={{ letterSpacing: '0.1em' }}>ROLLS</h3>
                 </div>
               </div>
             </div>
@@ -358,19 +358,29 @@ const Home = () => {
             {/* Right - Map */}
             <div className="relative">
               <div className="bg-[#1a1a1a] border border-red-600/30 rounded-lg overflow-hidden h-96 relative">
-                {/* Placeholder for map - you can integrate Google Maps or similar */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-red-600 rounded-full mx-auto mb-4 animate-pulse"></div>
-                    <p className="text-gray-400">Map Integration</p>
-                    <p className="text-sm text-gray-500 mt-2">Lesnaya str., 5 sq. 108</p>
-                  </div>
-                </div>
+                {/* Google Maps Embed for Cairo, Egypt */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.603895884!2d31.1884235!3d30.0444196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Egypt!5e0!3m2!1sen!2sus!4v1699123456789!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'invert(0.9) hue-rotate(180deg) contrast(1.2)' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Cairo, Egypt Location"
+                  className="w-full h-full"
+                ></iframe>
                 {/* Grid Pattern Overlay */}
-                <div className="absolute inset-0 opacity-10" style={{
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
                   backgroundImage: 'linear-gradient(rgba(220, 38, 38, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(220, 38, 38, 0.1) 1px, transparent 1px)',
                   backgroundSize: '50px 50px'
                 }}></div>
+                {/* Red Location Pin Overlay */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10">
+                  <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center animate-pulse shadow-lg" style={{ boxShadow: '0 0 20px rgba(220, 38, 38, 0.8)' }}>
+                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
